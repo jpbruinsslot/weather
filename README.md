@@ -38,7 +38,7 @@ directory where you can access it from the command line.
 ### Via Go
 
 ```text
-$ go install github.com/jpbruinsslot/weather/cmd/weather
+$ go install github.com/jpbruinsslot/weather/cmd/weather@latest
 ```
 
 ## 💻 Usage

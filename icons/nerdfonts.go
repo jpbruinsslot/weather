@@ -38,5 +38,13 @@ func NerdFonts() Icons {
 		ThunderstormDay:   "\ue30f", // nf-weather-day_thunderstorm
 		ThunderstormNight: "\ue32a", // nf-weather-night_alt_thunderstorm
 		RainIndicator:     "\ue371", // nf-weather-raindrops
+		WindNorth:         "\ue35a", // nf-weather-wind_north
+		WindNorthEast:     "\ue359", // nf-weather-wind_north_east
+		WindEast:          "\ue35b", // nf-weather-wind_east
+		WindSouthEast:     "\ue356", // nf-weather-wind_south_east
+		WindSouth:         "\ue357", // nf-weather-wind_south
+		WindSouthWest:     "\ue355", // nf-weather-wind_south_west
+		WindWest:          "\ue354", // nf-weather-wind_west
+		WindNorthWest:     "\ue358", // nf-weather-wind_north_west
 	}
 }

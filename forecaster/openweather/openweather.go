@@ -11,6 +11,7 @@ import (
 
 	"github.com/jpbruinsslot/weather/forecaster"
 	"github.com/jpbruinsslot/weather/geocoder"
+	"github.com/jpbruinsslot/weather/utils/conv"
 )
 
 type OpenWeather struct {
@@ -97,6 +98,10 @@ func (o OpenWeather) GetForecast() (forecaster.Forecast, error) {
 	if openweatherResp.Rain.OneHour > 0 {
 		forecast.Rain = true
 	}
+
+	// Set wind direction and speed
+	forecast.WindDirection = conv.DegreesToCompass(openweatherResp.Wind.Deg)
+	forecast.WindSpeed = openweatherResp.Wind.Speed
 
 	return forecast, nil
 }

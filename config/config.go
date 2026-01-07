@@ -104,6 +104,9 @@ func getDefaultConfig() Config {
 
 		IconType: icons.IconTypeUnicode,
 
+		Forecaster: ForecastProviders{},
+		Geocoder:   GeocodeProviders{},
+
 		Interval: 60,
 	}
 }

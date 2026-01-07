@@ -10,11 +10,13 @@ import (
 )
 
 type Output struct {
-	Colors      colors.Colors
-	Units       string
-	Temperature float64
-	Rain        string
-	Icon        string
+	Colors        colors.Colors
+	Units         string
+	Temperature   float64
+	Rain          string
+	Icon          string
+	WindDirection string
+	WindSpeed     float64
 }
 
 func (w *Weather) Temperature() float64 {
@@ -43,16 +45,33 @@ func (w *Weather) Rain() string {
 	return w.Config.Icons[icons.RainIndicator]
 }
 
+func (w *Weather) WindDirection() string {
+	slog.Debug(
+		fmt.Sprintf("wind direction used: %s", w.Forecast.WindDirection),
+	)
+	if w.Forecast.WindDirection == "" {
+		return ""
+	}
+
+	return w.Config.Icons[w.Forecast.WindDirection]
+}
+
+func (w *Weather) WindSpeed() float64 {
+	return w.Forecast.WindSpeed
+}
+
 func (w *Weather) Colors() colors.Colors {
 	return w.Config.Colors
 }
 
 func (w *Weather) GenerateOutput() Output {
 	return Output{
-		Temperature: w.Temperature(),
-		Rain:        w.Rain(),
-		Icon:        w.Icon(),
-		Units:       w.Units(),
-		Colors:      w.Colors(),
+		Temperature:   w.Temperature(),
+		Rain:          w.Rain(),
+		Icon:          w.Icon(),
+		Units:         w.Units(),
+		Colors:        w.Colors(),
+		WindDirection: w.WindDirection(),
+		WindSpeed:     w.WindSpeed(),
 	}
 }

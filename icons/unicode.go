@@ -38,5 +38,13 @@ func Unicode() Icons {
 		ThunderstormDay:   "\u26c8",
 		ThunderstormNight: "\u26c8",
 		RainIndicator:     "\u2614",
+		WindNorth:         "\U0001f32c",
+		WindNorthEast:     "\U0001f32c",
+		WindEast:          "\U0001f32c",
+		WindSouthEast:     "\U0001f32c",
+		WindSouth:         "\U0001f32c",
+		WindSouthWest:     "\U0001f32c",
+		WindWest:          "\U0001f32c",
+		WindNorthWest:     "\U0001f32c",
 	}
 }

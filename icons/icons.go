@@ -42,6 +42,15 @@ const (
 	ThunderstormDay   = "thunderstorm-day"
 	ThunderstormNight = "thunderstorm-night"
 	RainIndicator     = "rain-indicator"
+
+	WindNorth     = "wind-north"
+	WindNorthEast = "wind-north-east"
+	WindEast      = "wind-east"
+	WindSouthEast = "wind-south-east"
+	WindSouth     = "wind-south"
+	WindSouthWest = "wind-south-west"
+	WindWest      = "wind-west"
+	WindNorthWest = "wind-north-west"
 )
 
 type Icons map[string]string

@@ -148,10 +148,10 @@ func (w *Weather) GetLocator() string {
 
 func (w *Weather) GetForecast() error {
 	// Load cached forecast
-	err := w.Load()
-	if err != nil {
-		return err
-	}
+	// err := w.Load()
+	// if err != nil {
+	// 	return err
+	// }
 
 	// When the last check was less than the interval ago, use the cached forecast
 	if time.Since(w.LastCheck) < time.Duration(w.Config.Interval)*time.Second {
@@ -211,7 +211,6 @@ func (w *Weather) PrintForecast() error {
 }
 
 func (w *Weather) Save() error {
-
 	dataPath, err := xdg.DataFile("weather/data.gob")
 	if err != nil {
 		return err

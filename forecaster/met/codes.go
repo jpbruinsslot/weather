@@ -4,6 +4,9 @@ import (
 	"github.com/jpbruinsslot/weather/icons"
 )
 
+// Translate Met Norway weather codes to icons.
+//
+// Source:
 // https://github.com/metno/weathericons/tree/main/weather
 var CodesToIcons map[string]string = map[string]string{
 	"clearsky":                           icons.Clear,

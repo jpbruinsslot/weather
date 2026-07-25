@@ -1,3 +1,4 @@
+// URL: https://api.met.no/
 package met
 
 import (
@@ -93,6 +94,10 @@ func (m Met) GetForecast() (forecaster.Forecast, error) {
 	if metResponse.Properties.Timeseries[0].Data.Next1Hours.Details.PrecipitationAmount > 0 {
 		forecast.Rain = true
 	}
+
+	// Set wind direction and speed
+	forecast.WindDirection = conv.DegreesToCompass(metResponse.Properties.Timeseries[0].Data.Instant.Details.WindFromDirection)
+	forecast.WindSpeed = metResponse.Properties.Timeseries[0].Data.Instant.Details.WindSpeed
 
 	return forecast, nil
 }

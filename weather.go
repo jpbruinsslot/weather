@@ -211,7 +211,6 @@ func (w *Weather) PrintForecast() error {
 }
 
 func (w *Weather) Save() error {
-
 	dataPath, err := xdg.DataFile("weather/data.gob")
 	if err != nil {
 		return err
